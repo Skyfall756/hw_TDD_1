@@ -1,12 +1,11 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class PhoneBook {
 
     Map<String, String> phoneBook = new HashMap<>();
 
-    public int add (String name, String phoneNumber) {
+    public int add(String name, String phoneNumber) {
         phoneBook.put(name, phoneNumber);
         return phoneBook.size();
     }
@@ -17,11 +16,15 @@ public class PhoneBook {
                 .map(Map.Entry::getKey)
                 .findFirst();
         if (res.isPresent()) return res.get();
-    return null;
+        return null;
     }
 
-    public String findByName (String name) {
-        if(phoneBook.containsKey(name)) return phoneBook.get(name);
+    public String findByName(String name) {
+        if (phoneBook.containsKey(name)) return phoneBook.get(name);
+        return null;
+    }
+
+    public List<String> printAllNames() {
         return null;
     }
 }

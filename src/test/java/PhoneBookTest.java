@@ -4,6 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.beans.BeanProperty;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class PhoneBookTest {
     PhoneBook phoneBook;
@@ -55,6 +58,17 @@ public class PhoneBookTest {
     public void testFindByName2() {
         phoneBook.add("Вася", "89996789123");
         Assertions.assertEquals(phoneBook.findByName("Ваня"), null);
+    }
+
+    @Test
+    public void testPrintAllNames() {
+        phoneBook.add("Вася", "89996789123");
+        phoneBook.add("Иван", "81111038290");
+        phoneBook.add("Антон", "82876290870");
+        List<String> names = Arrays.asList("Антон", "Вася", "Иван");
+        Assertions.assertEquals(phoneBook.printAllNames(), names);
+
+
     }
 
 
