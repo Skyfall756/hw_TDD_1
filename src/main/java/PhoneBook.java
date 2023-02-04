@@ -19,4 +19,8 @@ public class PhoneBook {
         if (res.isPresent()) return res.get();
     return null;
     }
+
+    public String findByName () {
+        return null;
+    }
 }
