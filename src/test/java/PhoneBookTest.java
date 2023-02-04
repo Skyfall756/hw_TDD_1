@@ -20,13 +20,18 @@ public class PhoneBookTest {
 
     @Test
     public void testAdd () {
-        Assertions.assertEquals(phoneBook.add(), 1);
+        Assertions.assertEquals(phoneBook.add("Вася", "89996789123"), 1);
     }
     @Test
     public void testAdd2 () {
-        phoneBook.add();
-        Assertions.assertEquals(phoneBook.add(),2);
+        phoneBook.add("Вася", "89996789123");
+        Assertions.assertEquals(phoneBook.add("Ваня", "91768954444"),2);
     }
-    
+    @Test
+    public void testAddSame () {
+        phoneBook.add("Вася", "89996789123");
+        Assertions.assertEquals(phoneBook.add("Вася", "89996789123"),1);
+    }
+
 
 }
