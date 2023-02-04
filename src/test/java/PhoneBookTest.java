@@ -36,8 +36,16 @@ public class PhoneBookTest {
     @Test
     public void testFindByNumber() {
         phoneBook.add("Вася", "89996789123");
-        Assertions.assertEquals(phoneBook.findByNumber(), "Вася");
+        Assertions.assertEquals(phoneBook.findByNumber("89996789123"), "Вася");
     }
+
+    @Test
+    public void testFindByNumber2() {
+        phoneBook.add("Вася", "89996789123");
+        Assertions.assertEquals(phoneBook.findByNumber("89123"), null);
+
+    }
+
 
 
 }
