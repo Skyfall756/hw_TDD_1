@@ -20,7 +20,8 @@ public class PhoneBook {
     return null;
     }
 
-    public String findByName () {
+    public String findByName (String name) {
+        if(phoneBook.containsKey(name)) return phoneBook.get(name);
         return null;
     }
 }

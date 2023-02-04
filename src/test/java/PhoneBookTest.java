@@ -49,12 +49,12 @@ public class PhoneBookTest {
     @Test
     public void testFindByName() {
         phoneBook.add("Вася", "89996789123");
-        Assertions.assertEquals(phoneBook.findByName(), "89996789123");
+        Assertions.assertEquals(phoneBook.findByName("Вася"), "89996789123");
     }
     @Test
     public void testFindByName2() {
         phoneBook.add("Вася", "89996789123");
-        Assertions.assertEquals(phoneBook.findByName(), null);
+        Assertions.assertEquals(phoneBook.findByName("Ваня"), null);
     }
 
 
