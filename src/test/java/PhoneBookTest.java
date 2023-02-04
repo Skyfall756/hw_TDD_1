@@ -33,5 +33,11 @@ public class PhoneBookTest {
         Assertions.assertEquals(phoneBook.add("Вася", "89996789123"),1);
     }
 
+    @Test
+    public void testFindByNumber() {
+        phoneBook.add("Вася", "89996789123");
+        Assertions.assertEquals(phoneBook.findByNumber(), "Вася");
+    }
+
 
 }
